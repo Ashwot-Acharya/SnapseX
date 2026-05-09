@@ -1,0 +1,26 @@
+\frametitle{External Data Sources}
+\begin{tabular}{p{3cm}|p{8cm}}
+        \toprule
+        \textbf{API} & \textbf{Usage} \\
+        \midrule
+        AlphaFold DB   & Normal HTT structure (AF-P42858-F1-model\_v4.pdb) \\
+        ESMFold (Meta) & Mutant protein folding via POST to api.esmatlas.com \\
+        ChEMBL         & Drug-HTT interaction queries (target CHEMBL2093872) \\
+        \bottomrule
+    \end{tabular}
+
+    \vspace{0.5cm}
+    \textbf{Flask proxy pattern:}
+    \begin{lstlisting}[language=Python, basicstyle=\ttfamily\scriptsize]
+@htt_bp.route('/esmfold/fold', methods=['POST'])
+def fold_esmfold():
+    seq = request.json.get('sequence')
+    resp = requests.post(
+        'https://api.esmatlas.com/foldSequence/v1/pdb/',
+        data=seq, headers={'Content-Type': 'text/plain'},
+        timeout=60
+    )
+    return Response(resp.text, mimetype='text/plain')
+    \end{lstlisting}
+
+    \textbf{CORS handling:} Flask-CORS enables cross-origin requests from React dev server (port 5173 $\to$ 5000).

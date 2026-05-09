@@ -1,0 +1,10 @@
+\beamer@sectionintoc {1}{Biological Background}{3}{0}{1}
+\beamer@sectionintoc {2}{System Architecture}{5}{0}{2}
+\beamer@sectionintoc {3}{CFG/PCFG Algorithms}{7}{0}{3}
+\beamer@sectionintoc {4}{Fitness Landscape}{11}{0}{4}
+\beamer@sectionintoc {5}{Gene Regulatory Network}{13}{0}{5}
+\beamer@sectionintoc {6}{Protein Structure Prediction}{17}{0}{6}
+\beamer@sectionintoc {7}{Drug Interaction Model}{19}{0}{7}
+\beamer@sectionintoc {8}{Heredity Simulator}{22}{0}{8}
+\beamer@sectionintoc {9}{External APIs}{24}{0}{9}
+\beamer@sectionintoc {10}{Conclusions}{25}{0}{10}

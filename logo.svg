@@ -1,0 +1,67 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="helixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#34d399;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f87171;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="100" cy="100" r="100" fill="url(#bgGradient)"/>
+  
+  <!-- DNA Double Helix (stylized as HTT molecule) -->
+  <!-- Left strand of helix -->
+  <path d="M 60 40 Q 70 60, 60 80 Q 50 100, 60 120 Q 70 140, 60 160" 
+        stroke="url(#helixGradient)" stroke-width="8" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+  
+  <!-- Right strand of helix -->
+  <path d="M 140 40 Q 130 60, 140 80 Q 150 100, 140 120 Q 130 140, 140 160" 
+        stroke="url(#helixGradient)" stroke-width="8" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+  
+  <!-- Connecting bridges (base pairs) -->
+  <g stroke="url(#helixGradient)" stroke-width="3" stroke-linecap="round" opacity="0.8">
+    <line x1="60" y1="50" x2="140" y2="50"/>
+    <line x1="65" y1="70" x2="135" y2="70"/>
+    <line x1="58" y1="90" x2="142" y2="90"/>
+    <line x1="62" y1="110" x2="138" y2="110"/>
+    <line x1="57" y1="130" x2="143" y2="130"/>
+    <line x1="63" y1="150" x2="137" y2="150"/>
+  </g>
+  
+  <!-- Central CAG repeat indicator (polyQ motif) -->
+  <circle cx="100" cy="100" r="25" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.7" stroke-dasharray="5,3"/>
+  
+  <!-- Q letters (polyQ) inside circle -->
+  <text x="100" y="108" font-family="Arial, sans-serif" font-size="24" font-weight="bold" 
+        fill="#fbbf24" text-anchor="middle" opacity="0.9">Q</text>
+  
+  <!-- Nodes representing protein aggregation -->
+  <g fill="#ef4444" opacity="0.7">
+    <circle cx="85" cy="75" r="4"/>
+    <circle cx="115" cy="75" r="4"/>
+    <circle cx="80" cy="125" r="4"/>
+    <circle cx="120" cy="125" r="4"/>
+  </g>
+  
+  <!-- Top text: SnapseX -->
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+        fill="#ffffff" text-anchor="middle" letter-spacing="1">SNAPSEX</text>
+  
+  <!-- Subtle shine effect -->
+  <circle cx="70" cy="50" r="20" fill="white" opacity="0.1" filter="url(#glow)"/>
+</svg>
